@@ -11,5 +11,6 @@ import { SearchService } from './search.service';
   imports: [TypeOrmModule.forFeature([ChunkEntity, EmbeddingEntity, DocumentEntity])],
   controllers: [SearchController],
   providers: [SearchService, EmbedderService],
+  exports: [SearchService],
 })
 export class SearchModule {}

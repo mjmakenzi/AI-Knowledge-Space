@@ -21,6 +21,54 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
+# AI Knowledge Space
+
+> A full-stack AI-powered knowledge management system that lets you upload documents, extract information, and ask questions using natural language. Built with NestJS, PostgreSQL, pgvector, and Telegram Bot API.
+
+## 🎯 What is This?
+
+**AI Knowledge Space** is an intelligent document management and Q&A system. You can:
+
+- 📄 **Upload documents** (PDF, TXT, HTML) via Telegram bot
+- 🔍 **Search** through your documents using semantic search
+- 💬 **Ask questions** and get AI-powered answers with citations
+- 🧠 **Extract knowledge** from your document collection
+
+Think of it as your personal AI assistant that reads and remembers everything you upload, then answers questions about it.
+
+## 🚀 What is it Used For?
+
+### Use Cases
+
+1. **Personal Knowledge Base**
+   - Upload research papers, notes, articles
+   - Ask questions like "What did the paper say about X?"
+   - Build a searchable archive of your documents
+
+2. **Team Documentation**
+   - Centralize company docs, policies, procedures
+   - Team members can ask questions instead of searching manually
+   - Get instant answers with source citations
+
+3. **Research Assistant**
+   - Upload multiple research papers
+   - Ask complex questions across all documents
+   - Get synthesized answers with references
+
+4. **Customer Support**
+   - Upload product manuals, FAQs, documentation
+   - Customers can ask questions via Telegram
+   - Get accurate answers with source links
+
+5. **Educational Tool**
+   - Students upload course materials
+   - Ask questions about the content
+   - Learn through interactive Q&A
+
+## 🏗️ How It Works (Exactly)
+
+### Architecture Overview
+
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.

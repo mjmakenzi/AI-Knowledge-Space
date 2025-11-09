@@ -5,6 +5,7 @@ import { randomUUID } from 'node:crypto';
 import { extname } from 'node:path';
 import { diskStorage } from 'multer';
 import { CreateDocumentDto } from './dto/create-document.dto';
+import { SanitizeUtil } from '../../utils/sanitize.util';
 
 @Controller('documents')
 export class DocumentsController {
@@ -32,15 +33,21 @@ export class DocumentsController {
         },
       }),
       limits: { fileSize: 25 * 1024 * 1024 }, // 25MB
+      preservePath: false,
     }),
   )
   async upload(@UploadedFile() file: Express.Multer.File) {
+    // Sanitize all text fields before storing in database
+    const originalName = SanitizeUtil.sanitizeFilename(file.originalname);
+    const mimeType = SanitizeUtil.sanitizeMimeType(file.mimetype);
+
     const dto: CreateDocumentDto = {
-      title: file.originalname,
-      mime: file.mimetype,
+      title: originalName,
+      mime: mimeType,
       bytes: String(file.size),
-      storageKey: `storage/${file.filename}`,
+      storageKey: SanitizeUtil.sanitizeText(`storage/${file.filename}`),
     };
+
     const saved = await this.docs.create(dto);
     return { id: saved.id, title: saved.title, status: saved.status };
   }
